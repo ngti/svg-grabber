@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>&lt;svg&gt;grabber</title>
+  <link rel='stylesheet' href='style.css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet'>
+</head>
+
+
+<body class='sans-serif'>
+  <header>
+    <div class='logo'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+        <g fill='none' fill-rule='evenodd'>
+          <path fill='#FFF' d='M12 23v7h3v3h3v6h3v3h3v3h3v3h13v-3h3v3h3v-6h3v-7h3V23h-4v3h-3v-6h-4v4h-3v-7h-6l-.25 7H29v-4h-4v9h-3v-3h-4v-3'
+          />
+          <path fill='currentColor' d='M22 23h-4v3h4v3h3V17h-3v6zm19-6h4v3h-4v-3zm-29 3h6v3h-6v-3zm17-3h3v7h-3v-7zm0 13h3v12h-3V30zM9 23h3v7H9v-7zm3 7h3v3h-3v-3zm6 9h3v3h-3v-3zm3 3h3v3h-3v-3zm19 3h3v3h-3v-3zm3 3h3v3h-3v-3zm-16 0h13v3H27v-3zm-3-3h3v6h-3v-6zm-9-12h3v6h-3v-6zm20-3h3v12h-3V30zm6 0h3v12h-3V30zm5 12h3v9h-3v-9zm3-7h3v7h-3v-7zM38 17h3v7h-3v-7zm7 0h3v9h-3v-9zm3 3h4v3h-4v-3zm4 0h3v15h-3V20zm-27-3h4v3h-4v-3zm7-3h6v3h-6v-3z'
+          />
+        </g>
+      </svg>
+    </div>
+    <p class='title'>&lt;svg&gt;grabber</p>
+  </header>
+
+  <div class='container'>
+    <div class='all-from'>
+      <h1 id='header'></h1>
+      <a id='sender-url' href=''></a>
+      <p class='disclaimer'>Some of the logos design and the artwork you are about to download are the intellectual property of the copyright and/or
+        trademark holder and are offered to you as a convenience for lawful use with proper permission from the copyright
+        and/or trademark holder only.</p>
+      <button id='download-all'>
+        <div class='button-icon'>
+          Download all SVGs
+          <div class='icon-small icon-right'>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 92'>
+              <path fill='currentColor' d='M89 58.8V86c0 2.8-2.2 5-5 5H8c-2.8 0-5-2.2-5-5V58.8c0-2.8 2.2-5 5-5s5 2.2 5 5V81h66V58.8c0-2.8 2.2-5 5-5s5 2.2 5 5zM42.4 65c.9 1 2.2 1.5 3.6 1.5s2.6-.5 3.6-1.5l19.9-20.4c1.9-2 1.9-5.1-.1-7.1-2-1.9-5.1-1.9-7.1.1L51 49.3V6c0-2.8-2.2-5-5-5s-5 2.2-5 5v43.3L29.6 37.7c-1.9-2-5.1-2-7.1-.1s-2 5.1-.1 7.1l20 20.3z'
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div id='svgcard' class='allsvg-container'></div>
+    <input class='clipboard hidden' />
+  </div>
+
+  <div class='notification notification-off'>
+    <div class='icon icon-left'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 92'>
+        <path fill='currentColor' d='M34.4 72c-1.2 0-2.3-.4-3.2-1.3L11.3 50.8c-1.8-1.8-1.8-4.6 0-6.4 1.8-1.8 4.6-1.8 6.4 0l16.8 16.7 39.9-39.8c1.8-1.8 4.6-1.8 6.4 0 1.8 1.8 1.8 4.6 0 6.4l-43.1 43c-1 .9-2.1 1.3-3.3 1.3z'
+        />
+      </svg>
+    </div>
+    <p>SVG code copied!</p>
+  </div>
+
+</body>
+<script src='thirdParty/jszip.min.js'></script>
+<script src='thirdParty/filesaver.min.js'></script>
+<script src='getsvgs.js'></script>
+
+</html>
