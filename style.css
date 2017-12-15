@@ -94,14 +94,6 @@ h1 {
   justify-content: space-between;
 }
 
-.svg-asset {
-  display: inline-flex;
-
-  svg {
-    
-  }
-}
-
 .actions {
   display: flex;
   justify-content: space-between;

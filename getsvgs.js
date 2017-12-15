@@ -17,7 +17,7 @@ function setSvgsUrl(data, sender, pageUrl) {
       element.innerHTML = `
       <div>
       </div>
-      <div class='svg-asset'>
+      <div>
         ${svg}
       </div>
       <div class="actions">
