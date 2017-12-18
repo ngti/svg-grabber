@@ -76,7 +76,6 @@ h1 {
 
 .allsvg-container {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: auto;
   grid-column-gap: 2.5rem;
@@ -186,10 +185,3 @@ button:hover, button:focus, a:hover, a:focus {
   opacity: 0;
   transform: scale(0);
 }
-
-/* @media screen and (max-width: 768px) {
-  .allsvg-container {
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-  }
-} */
