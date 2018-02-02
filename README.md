@@ -1,5 +1,5 @@
 # svg-grabber
-Svg-grabber is a Chrome extesion to get inline and embedded svgs images from a website.
+This is a Chrome extesion to preview and download all the svg assets from a website.
 
 The motivation to make this extension was to provide an easy way for designers to quickly get the svg assets from websites in projects [we (NGTI)](https://ngti.nl/) were working on.
 
@@ -11,7 +11,7 @@ The easiest way to install svg-grabber extension is through the Chrome Web Store
 [Link to store](https://chrome.google.com/webstore...)
 
 ### Permissions
-Svg-grabber requires permission to read and modify all the data of the website that you want to extrach the svg files from. It is nessesary to parse and extract the svg assets on the site.
+The extension requires permission to read and modify all the data of the website that you want to extrach the svg files from. It is nessesary to parse and extract the svg assets on the site.
 
 ## Developer mode
 If you would like to modify this extension, you will need to install it manually. Clone, download or fork this repository. In Chrome Extnesions page `chrome://extensions/`. Developer mode must be enabled, then click the button **Load unpacked extension**.

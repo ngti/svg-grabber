@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "svg grabber",
-  "description": "Grab all SVG's from a page",
+  "name": "svg-grabber - get all the svg's from a site",
+  "short_name": "svg-grabber",
+  "description": "A tool to quickly preview and get all the svg assets from a website.",
   "version": "1.0.0",
   "background": {
     "scripts": ["background.js"]
