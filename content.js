@@ -9,6 +9,38 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     return node;
   }
 
+  let removeColorIfNecessary = (node) => {
+    let colors = getColors(node);
+    if (colors.length == 1){
+      console.log("REMOVING COLOR",colors[0]);
+      removeColor(node);
+    } else {
+      console.log("FOUND COLORS",colors);
+    }
+    return node;
+  }
+
+  let getColors = (node) => {
+    let colors = [];
+    if (node.hasAttribute && node.hasAttribute('fill')) {
+      let color = node.getAttribute('fill').toLowerCase();
+      if (color != 'none' && color !='currentcolor'){
+        colors.push(color);
+      }
+    }
+    if (node.hasChildNodes()) {
+      node.childNodes.forEach((child) => {
+          let childColors = getColors(child);
+          childColors.forEach((color)=>{
+              if (colors.indexOf(color)==-1){
+                  colors.push(color);
+              }
+          })
+        });
+    }
+    return colors;
+  }
+
   let removeDimensions = (node) => {
     if (node.hasAttribute && node.hasAttribute('height')) {
       node.removeAttribute('height');
@@ -22,9 +54,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.message === 'clicked_browser_action') {
     let svgInlineCodes = Array.from(
       document.querySelectorAll('svg'), e => {
-        let result = e.cloneNode(true);
-        // removeColor(result);
-        return result;
+        let node = e.cloneNode(true);
+        removeColorIfNecessary(node);
+        removeDimensions(node);
+        return node;
       }
     );
 
@@ -48,23 +81,24 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       let svgCodes = svgInlineCodes.concat(svgFileCodes);
       let serializer = new XMLSerializer();
       svgCodes = svgCodes.map((node) => {
+        removeColorIfNecessary(node);
         return serializer.serializeToString(removeDimensions(node));
       })      
-          console.log(svgCodes);
-          // Removes spaces
-          svgCodes = svgCodes.map(item => {
-            return item.replace(/>\s+</g, '><');
-          });
-      
-          // Removes duplicated svg's
-          svgCodesFinal = svgCodes.filter(function(item, pos) {
-            return svgCodes.indexOf(item) == pos;
-          });
-      
-          chrome.runtime.sendMessage({
-            message: { type: 'open_new_tab', data: svgCodesFinal },
-            url: 'getsvgs.html'
-          });
+      console.log(svgCodes);
+      // Removes spaces
+      svgCodes = svgCodes.map(item => {
+        return item.replace(/>\s+</g, '><');
+      });
+
+      // Removes duplicated svg's
+      svgCodesFinal = svgCodes.filter(function(item, pos) {
+        return svgCodes.indexOf(item) == pos;
+      });
+
+      chrome.runtime.sendMessage({
+      message: { type: 'open_new_tab', data: svgCodesFinal },
+      url: 'getsvgs.html'
+      });
     });
 
   }
