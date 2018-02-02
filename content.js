@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     let svgInlineCodes = Array.from(
       document.querySelectorAll('svg'), e => {
         let result = e.cloneNode(true);
-        removeColor(result);
+        // removeColor(result);
         return result;
       }
     );

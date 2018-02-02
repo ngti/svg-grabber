@@ -76,10 +76,10 @@ h1 {
 
 .allsvg-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   grid-template-rows: auto;
-  grid-column-gap: 3rem;
-  grid-row-gap: 3rem;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
   align-content: stretch;
 }
 
@@ -104,6 +104,10 @@ button {
   background: none;
   outline: none;
   border: none;
+}
+
+.copy {
+  padding: 0 1.5rem 0 0;
 }
 
 .button-icon {
@@ -181,18 +185,3 @@ button:hover, button:focus, a:hover, a:focus {
   opacity: 0;
   transform: scale(0);
 }
-
-@media screen and (max-width: 768px) {
-  .allsvg-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .allsvg-container {
-    grid-template-columns: 1fr;
-  }
-}
-
