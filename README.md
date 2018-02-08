@@ -1,5 +1,5 @@
 # svg-grabber
-This is a Chrome extesion to preview and download all the svg assets from a website.
+This is a Chrome extension to preview and download all the svg assets from a website.
 
 The motivation to make this extension was to provide an easy way for designers to quickly get the svg assets from websites in projects [we (NGTI)](https://ngti.nl/) were working on.
 
