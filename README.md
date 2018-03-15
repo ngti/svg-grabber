@@ -8,7 +8,7 @@ The motivation to make this extension was to provide an easy way for designers t
 ## Installation
 The easiest way to install svg-grabber extension is through the Chrome Web Store:
 
-[Link to store](https://chrome.google.com/webstore...)
+[Link to store](https://chrome.google.com/webstore/detail/svg-grabber-get-all-the-s/ndakggdliegnegeclmfgodmgemdokdmg)
 
 ### Permissions
 The extension requires permission to read and modify all the data of the website that you want to extrach the svg files from. It is nessesary to parse and extract the svg assets on the site.
